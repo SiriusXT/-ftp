@@ -32,10 +32,12 @@ def startftp(username,password,port):
     # start ftp server
     server.serve_forever()
 def QR(url):
-    qr = qrcode.QRCode()
-    qr.add_data(url)
-    qr.print_ascii(invert=True)
-    print(addresss)
+    img = qrcode.make(url)
+    img.show()
+    # qr = qrcode.QRCode()
+    # qr.add_data(url)
+    # qr.print_ascii(invert=True)
+    # print(url)
 while True:
     try:
         myname = socket.getfqdn(socket.gethostname())
